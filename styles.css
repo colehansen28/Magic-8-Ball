@@ -1,0 +1,180 @@
+/* main boiler */
+*{
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+/* css magic 8 ball */
+.makeBall{
+    border: solid black;
+    height: 400px;
+    width: 400px;
+    border-radius: 100%;
+    border-width: 6rem;
+    text-align: center;
+    font-size: larger;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: ballHover 4s linear infinite;
+    margin-bottom: 1rem;
+}
+
+.eight{
+    font-size: 12rem;
+}
+
+.spin{
+    animation: spin 2s ease-in forwards;
+}
+
+.hidden{
+    display: none;
+}
+
+
+/* page container for everything */
+.page{
+    padding: 2rem 0rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header{
+    background: linear-gradient(to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#ball{
+animation: ballHover 4s linear infinite;
+}
+
+.shadow{
+    height: 10px;
+    width: 50%;
+    margin: auto;
+    border-radius: 100%;
+    background-color: rgb(102, 102, 102);
+    animation: shadowHover 4s linear infinite;
+}
+
+
+/* button */
+.button{
+    display: grid;
+    gap: .5rem;
+    justify-content: center;
+
+}
+input{
+    padding: .25rem .5rem;
+    border-radius: .5rem;
+    transition: all .3s;
+}
+button{
+    padding: .5rem 1rem;
+    font-weight: 700;
+    background: linear-gradient(grey, black);
+    border: none;
+    border-radius: .5rem;
+    color: white;
+    transition: all .3s;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#answer{
+    font-size: 3rem;
+    font-family: Roboto;
+}
+
+.error{
+    border-color: red;
+    animation: error .6s ease-in forwards
+}
+
+/* Animations */
+@keyframes ballHover {
+    0%{
+        transform: translatey(0px);
+    }
+    20%{
+        transform: translatey(-4px);
+    }
+    40%{
+        transform: translatey(-6px);
+    }
+  
+    60%{
+        transform: translatey(-6px);
+    }
+  
+    80%{
+        transform: translatey(-4px);
+    }
+    100%{
+        transform: translatey(0px);
+    }
+}
+
+@keyframes shadowHover {
+    0%{
+        width: 50%;
+    }
+    20%{
+        width: 48%;
+    }
+    40%{
+        width: 46%
+    }
+  
+    60%{
+        width: 46%
+    }
+  
+    80%{
+        width: 48%
+    }
+    100%{
+        width: 50%
+    }
+    
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+        opacity: 100%;
+    }
+    to {
+        transform:rotate(2420deg);
+        opacity: 0%;
+    }
+    
+}
+
+@keyframes fadeOut {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
+
+@keyframes error {
+    0% { transform: skewX(-15deg); }
+    5% { transform: skewX(15deg); }
+    10% { transform: skewX(-15deg); }
+    15% { transform: skewX(15deg); }
+    20% { transform: skewX(0deg); }
+    100% { transform: skewX(0deg); }
+    
+}
+
